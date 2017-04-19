@@ -4,6 +4,9 @@
 
 struct Player: public MovableGameObject 
 {
+	Player(const Rectangle& r, const Texture& texture, Direction dir = DOWN, State state = IDLE)
+		: MovableGameObject(r, texture, dir), state(state) {}
+
 	virtual ~Player() {}
 
 	State state;
