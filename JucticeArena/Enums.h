@@ -1,5 +1,8 @@
 #pragma once
 
+#define COUNT_OF_FRAMES 4
+#define COUNT_OF_FRAMES_AA 2
+
 enum Direction
 {
 	UP = 0,

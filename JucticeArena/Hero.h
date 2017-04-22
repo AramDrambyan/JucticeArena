@@ -3,23 +3,45 @@
 
 struct Hero: public MovableGameObject 
 {
-	Hero(const Rect& r, const Texture& texture, const Texture& autoattack_animation, const Texture& ability_animation,
-		int move_speed, Direction dir = DOWN, State state = IDLE)
-		: MovableGameObject(r, texture, move_speed, dir), state(state),
-		autoattack_animation(autoattack_animation), ability_animation(ability_animation) {}
+	Hero(const Rect& r, const Texture& texture, const Texture& autoattack_animation,
+		int move_speed, int health, int damage,int autoattack_speed, int spec1_cooldown,
+        int spec2_cooldown, Direction dir = DOWN, State state = IDLE)
+		: MovableGameObject(r, texture, move_speed, damage, dir), health(health),
+        spec1_cooldown(spec1_cooldown), spec2_cooldown(spec2_cooldown), 
+        autoattack_speed(autoattack_speed), state(state), autoattack_animation(autoattack_animation)
+    {
+        autoattack_state = 0;
+        spec1_state = 0;
+        spec2_state = 0;
+    }
 
 	virtual ~Hero() {}
 
+	int health;
+	int autoattack_speed;
+    int spec1_cooldown;
+    int spec2_cooldown;
+
+    int autoattack_state;
+    int spec1_state;
+    int spec2_state;
+
 	State state;
 	Texture autoattack_animation;
-	Texture ability_animation;
 
-	/*virtual Ability* spec1() = 0;
-	virtual Ability* spec2() = 0;
-	virtual void autoattack(Hero&) = 0;*/
+	virtual Ability spec1() = 0;
+	virtual Ability spec2() = 0;
+	virtual void autoattack(Hero&) = 0;
+	virtual bool is_able_to_attack(const Hero&) = 0;
+
 
 	void move(const Direction dir_)
 	{
+		if (state == ATTACK)
+		{
+			return;
+		}
+
 		if(dir != dir_)
 		{
 			dir = dir_;
@@ -28,7 +50,7 @@ struct Hero: public MovableGameObject
 		}
 
 		texture.frame.p.x += texture.frame.w;
-		if(texture.frame.p.x >= 5 * texture.frame.w)
+		if (texture.frame.p.x >= COUNT_OF_FRAMES * texture.frame.w)
 		{
 			texture.frame.p.x = texture.frame.w;
 		}
@@ -38,19 +60,5 @@ struct Hero: public MovableGameObject
 		std::pair<int, int> c = move_coords(dir, move_speed);
 		boundary.p.x += c.first;
 		boundary.p.y += c.second;
-	}
-
-	void idle_state()
-	{
-		if(state == IDLE)
-		{
-			texture.frame.p.x = 0;
-		}
-	}
-
-	virtual void draw()
-	{
-		al_draw_bitmap_region(texture.texture, texture.frame.p.x, texture.frame.p.y,
-			texture.frame.w, texture.frame.h, boundary.p.x, boundary.p.y, NULL);
 	}
 };

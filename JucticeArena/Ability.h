@@ -12,8 +12,8 @@ struct Ability: public MovableGameObject
 
 	int range;
 
-	Ability(const Rect& r, const Texture& texture, int range, int move_speed, Direction dir = DOWN)
-		: MovableGameObject(r, texture,move_speed, dir), range(range) {}
+	Ability(const Rect& r, const Texture& texture, int range, int move_speed, int damage, Direction dir = DOWN)
+		: MovableGameObject(r, texture,move_speed, damage, dir), range(range) {}
 
 	void move()
 	{

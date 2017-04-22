@@ -54,4 +54,28 @@ struct Rect
 		}
 		return true;
 	}
+
+	bool intersect_direction(const Rect& r,Direction dir) const     //  checks direction of intersect
+	{
+		if (contains_point(Point(r.p.x + r.w, r.p.y + r.h)))
+		{
+			return dir == LEFT || dir == UP;
+		}
+
+		if (contains_point(Point(r.p.x, r.p.y)))
+		{
+			return dir == RIGHT || dir == DOWN;
+		}
+
+		if (contains_point(Point(r.p.x + r.w, r.p.y)))
+		{
+			return dir == LEFT || dir == DOWN;
+		}
+
+		if (contains_point(Point(r.p.x, r.p.y + r.h)))
+		{
+			return dir == RIGHT || dir == UP;
+		}
+		return false;
+	}
 };
