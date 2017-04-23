@@ -5,10 +5,9 @@
 #include <allegro5\allegro_image.h>
 #include "Util.h"
 
-struct Ability: public MovableGameObject
+struct Ability : public MovableGameObject
 {
 	virtual ~Ability() {}
-
 
 	int range;
 
@@ -22,7 +21,6 @@ struct Ability: public MovableGameObject
 		boundary.p.y += c.second;
 		range -= move_speed;
 	}
-
 	virtual void draw()
 	{
 		al_draw_bitmap(texture.texture, boundary.p.x, boundary.p.y, NULL);

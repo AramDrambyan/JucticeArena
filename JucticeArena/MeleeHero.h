@@ -10,13 +10,12 @@ struct MeleeHero : public Hero
 
 	virtual bool is_able_to_attack(const Hero& h)
 	{
-		if (boundary.intersect_direction(h.boundary, dir) && autoattack_state == 0)
+		if (boundary.intersect_direction(h.boundary, dir) && autoattack_state == 0 && frozen == 0)
 		{
 			return true;
 		}
 		return false;
 	}
-
 	virtual void autoattack(Hero& h)
 	{
 		state == ATTACK;
@@ -26,7 +25,6 @@ struct MeleeHero : public Hero
         autoattack_animation.frame.p.x = 0;
         autoattack_animation.frame.p.y = dir * autoattack_animation.frame.h;
 	}
-
     virtual void draw() //  if state == ATTACK he will end his attack animation 
     {
         if (state == ATTACK)
@@ -49,11 +47,13 @@ struct MeleeHero : public Hero
             texture.frame.w, texture.frame.h, boundary.p.x, boundary.p.y, NULL);
 
         if (autoattack_state != 0)
-            --autoattack_speed;
+            --autoattack_state;
         if (spec1_state != 0)
             --spec1_state;
         if (spec2_state != 0)
             --spec2_state;
+        if (frozen != 0)
+            --frozen;
     }
 
 	virtual ~MeleeHero() {}

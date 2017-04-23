@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Enums.h"
+
 struct Point
 {
 	int x, y;
@@ -14,11 +16,11 @@ struct Rect
 {
 	// upper-left corner of Rectangle
 	Point p;
-	int h, w;
+	double h, w;
 
 	// coords start from the uppper-left corner of the field
 
-	Rect(Point p = Point(),int w = 0, int h = 0)
+	Rect(Point p = Point(),double w = 0, double h = 0)
 	{
 		this->p = p;
 		this->h = h;
@@ -32,7 +34,6 @@ struct Rect
 			p.y >= this->p.y &&
 			p.y <= this->p.y + h;
 	}
-
 	bool intersects_rect(const Rect& r) const
 	{
 		Point a[] = {r.p, Point(r.p.x + r.w, r.p.y), Point(r.p.x, r.p.y + r.h), Point(r.p.x + r.w, r.p.y + r.h)};
@@ -43,7 +44,6 @@ struct Rect
 		}
 		return false;
 	}
-
 	bool contains_rect(const Rect& r) const		// check if rectangle contains another one 
 	{
 		Point a[] = {r.p, Point(r.p.x + r.w, r.p.y), Point(r.p.x, r.p.y + r.h), Point(r.p.x + r.w, r.p.y + r.h)};
@@ -54,8 +54,7 @@ struct Rect
 		}
 		return true;
 	}
-
-	bool intersect_direction(const Rect& r,Direction dir) const     //  checks direction of intersect
+	bool intersect_direction(const Rect& r, Direction dir) const     //  checks direction of intersect
 	{
 		if (contains_point(Point(r.p.x + r.w, r.p.y + r.h)))
 		{

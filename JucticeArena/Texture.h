@@ -4,7 +4,7 @@
 
 struct Texture
 {
-	Texture(const char* path_to_texture, Point p = Point(), int wp = 0, int hp = 0)	
+	Texture(const char* path_to_texture, Point p = Point(), double wp = 0, double hp = 0)	
 	{
 		texture = al_load_bitmap(path_to_texture);
 		frame.p = p;
