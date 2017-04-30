@@ -12,6 +12,8 @@ struct Texture
 		frame.h = al_get_bitmap_height(texture) / hp;
 	}
 
+    Texture() {}
+
 	ALLEGRO_BITMAP* texture;
 	Rect frame;
 

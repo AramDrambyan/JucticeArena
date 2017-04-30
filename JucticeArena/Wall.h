@@ -4,8 +4,10 @@
 
 struct Wall : public GameObject 
 {
-	Wall(const Rect& r, const Texture& texture)
-		: GameObject(r, texture){}
+	Wall(const Rect& r)
+		: GameObject(r, Texture("wall.png")){}
+
+    Wall(){}
 
 	virtual void draw()
 	{

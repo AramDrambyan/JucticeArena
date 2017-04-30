@@ -5,11 +5,17 @@ struct RangeHero : public Hero
 {
     virtual ~RangeHero() {}
 
-    int range;
-
-    RangeHero(const Rect& r, const Texture& texture, const Texture& autoattack_animation,
-        int move_speed, int health, int damage, int range, int autoattack_speed, Direction dir = DOWN, State state = IDLE)
-        : Hero(r, texture, autoattack_animation, move_speed, health, damage, autoattack_speed, dir, state), range(range) {}
+    RangeHero(const Rect& r, const Texture& texture, const Texture& autoattack_animation, std::string name,
+        int move_speed, int health, int damage, int range, int autoattack_speed,
+        int spec1_cooldown, int spec2_cooldown, Direction dir = UP, State state = IDLE)
+        : Hero(r, texture, autoattack_animation, name, move_speed, health, damage, range, autoattack_speed,
+        spec1_cooldown, spec2_cooldown, dir, state)
+    {
+        autoattack_state = 0;
+        spec1_state = 0;
+        spec2_state = 0;
+        frozen = 0;
+    }
 
     virtual bool is_able_to_attack(const Hero& h)
     {
@@ -41,7 +47,7 @@ struct RangeHero : public Hero
                 
                 ALLEGRO_BITMAP* bullet = al_load_bitmap("bullet.png");
 
-                std::pair<int, int> c = move_coords(dir, range / 2);
+                std::pair<int, int> c = move_coords(dir, 50);
                 int x_ = boundary.p.x + c.first, y_ = boundary.p.y + c.second;
 
                 al_draw_bitmap(bullet, x_, y_, NULL);
@@ -71,15 +77,4 @@ struct RangeHero : public Hero
         if (frozen != 0)
             --frozen;
     }
-
-
-    //  uncomment to check movement
-    /*virtual Ability spec1()
-    {
-        return Ability(Rect(), Texture("a.png"), 1, 1, 1);
-    }
-    virtual Ability spec2() 
-    {
-        return Ability(Rect(), Texture("a.png"), 1, 1, 1);
-    }*/
 };

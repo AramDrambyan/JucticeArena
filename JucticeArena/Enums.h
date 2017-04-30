@@ -1,7 +1,8 @@
 #pragma once
+#include <vector>
 
 #define COUNT_OF_FRAMES 4
-#define COUNT_OF_FRAMES_AA 2
+#define COUNT_OF_FRAMES_AA 3
 
 enum Direction
 {

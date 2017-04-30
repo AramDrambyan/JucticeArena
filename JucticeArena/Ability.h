@@ -10,9 +10,10 @@ struct Ability : public MovableGameObject
 	virtual ~Ability() {}
 
 	int range;
+    int froze_time;
 
-	Ability(const Rect& r, const Texture& texture, int range, int move_speed, int damage, Direction dir = DOWN)
-		: MovableGameObject(r, texture,move_speed, damage, dir), range(range) {}
+	Ability(const Rect& r, const Texture& texture, int range, int move_speed, int damage, Direction dir = UP, int froze_time = 0)
+		: MovableGameObject(r, texture,move_speed, damage, dir), range(range), froze_time(froze_time) {}
 
 	void move()
 	{
