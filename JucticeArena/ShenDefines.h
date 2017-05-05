@@ -1,0 +1,13 @@
+#pragma once
+
+#define HEALTH 2000 
+#define DAMAGE 200
+#define MOVE_SPEED 10
+#define RANGE 0
+#define AUTOATTACK_SPEED 6
+#define SPEC1_COOLDOWN 40
+#define SPEC2_COOLDOWN 35
+#define SHURIKEN_SIZE 20
+#define SHURIKEN_RANGE 150
+#define SHURIKEN_DAMAGE 2000
+#define SHURIKEN_MOVE_SPEED 20

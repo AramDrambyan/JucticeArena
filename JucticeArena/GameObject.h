@@ -10,6 +10,8 @@ struct GameObject
 	GameObject(const Rect& r, const Texture& texture)
 		:boundary(r), texture(texture) {}
 
+    GameObject() {}
+
 	virtual ~GameObject(){}
 
 	virtual void draw() = 0;
