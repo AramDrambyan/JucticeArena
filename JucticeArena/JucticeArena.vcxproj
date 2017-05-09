@@ -67,24 +67,37 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ability.h" />
+    <ClInclude Include="Caitlyn.h" />
+    <ClInclude Include="CaitlynDefines.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Geometry.h" />
-    <ClInclude Include="Grass.h" />
     <ClInclude Include="Ground.h" />
+    <ClInclude Include="Illaoi.h" />
+    <ClInclude Include="IllaoiDefines.h" />
+    <ClInclude Include="Karma.h" />
+    <ClInclude Include="KarmaDefines.h" />
+    <ClInclude Include="LeeSin.h" />
+    <ClInclude Include="LeeSinDefines.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapDefines.h" />
+    <ClInclude Include="MapInfo.h" />
     <ClInclude Include="MeleeHero.h" />
     <ClInclude Include="MovableGameObject.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="RangeHero.h" />
+    <ClInclude Include="Ryze.h" />
+    <ClInclude Include="RyzeDefines.h" />
     <ClInclude Include="Shen.h" />
     <ClInclude Include="ShenDefines.h" />
+    <ClInclude Include="SoundEffects.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="Vectors.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="Water.h" />
+    <ClInclude Include="Zed.h" />
+    <ClInclude Include="ZedDefines.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

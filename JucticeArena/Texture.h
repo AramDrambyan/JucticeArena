@@ -17,8 +17,5 @@ struct Texture
 	ALLEGRO_BITMAP* texture;
 	Rect frame;
 
-	void destroy()
-	{
-		al_destroy_bitmap(texture);
-	}
+
 };

@@ -52,17 +52,17 @@ bool hit_water(Rect r)
 void add_water()
 {
 
-    for (int x = 940; x <= 1090; x += 50)
+    for (int x = 930; x <= 1080; x += 50)
     {
-        for (int y = 390; y <= 490; y += 50)
+        for (int y = 420; y <= 520; y += 50)
         {
             water.push_back(Water(Rect(Point(x, y), 50, 50)));
         }
     }
 
-    for (int x = 210; x >= 60; x -= 50)
+    for (int x = 220; x >= 70; x -= 50)
     {
-        for (int y = 240; y <= 340; y += 50)
+        for (int y = 230; y <= 330; y += 50)
         {
             water.push_back(Water(Rect(Point(x, y), 50, 50)));
         }
@@ -140,5 +140,24 @@ void add_walls()
     for (int i = 800; i < 1100; i += 50)
     {
         walls.push_back(Wall(Rect(Point(i, 300), 50, 50)));
+    }
+}
+Direction to_dir(int i)
+{
+    if (i == 0)
+    {
+        return UP;
+    }
+    if (i == 1)
+    {
+        return RIGHT;
+    }
+    if (i == 2)
+    {
+        return DOWN;
+    }
+    if (i == 3)
+    {
+        return LEFT;
     }
 }
