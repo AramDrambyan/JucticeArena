@@ -1,0 +1,20 @@
+#pragma once
+
+#define R_HEALTH 1200 
+#define R_DAMAGE 100
+#define R_MOVE_SPEED 10
+#define R_RANGE 150
+#define R_AUTOATTACK_SPEED 8
+#define R_SPEC1_COOLDOWN 50
+#define R_SPEC2_COOLDOWN 250
+#define R_SPHERE_SIZE 50
+#define R_SPHERE_DAMAGE 500
+#define R_SPHERE_MOVE_SPEED 30
+#define R_SPHERE_TIME 10
+#define R_SPHERE_FROZE_TIME 10
+#define R_TP_SIZE 100
+#define R_TP_DAMAGE 0
+#define R_TP_MOVE_SPEED 0
+#define R_TP_TIME 10
+#define R_TP_WAITING -10
+#define R_PASSIVE 10

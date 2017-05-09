@@ -1,0 +1,13 @@
+#pragma once
+
+#define LS_HEALTH 1700 
+#define LS_DAMAGE 250
+#define LS_MOVE_SPEED 10
+#define LS_RANGE 0
+#define LS_AUTOATTACK_SPEED 7
+#define LS_SPEC1_COOLDOWN 200
+#define LS_SPEC2_COOLDOWN 70
+#define LS_SONIC_SIZE 30
+#define LS_SONIC_DAMAGE 200
+#define LS_SONIC_MOVE_SPEED 25
+#define LS_SONIC_TIME 10

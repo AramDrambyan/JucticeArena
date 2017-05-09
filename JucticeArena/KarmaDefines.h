@@ -1,0 +1,18 @@
+#pragma once
+
+#define K_HEALTH 1100 
+#define K_DAMAGE 150
+#define K_MOVE_SPEED 9
+#define K_RANGE 150
+#define K_AUTOATTACK_SPEED 10
+#define K_SPEC1_COOLDOWN 40
+#define K_SPEC2_COOLDOWN 80
+#define K_SPHERE_DAMAGE 350
+#define K_SPHERE_MOVE_SPEED 25
+#define K_SPHERE_TIME 10
+#define K_SPHERE_SIZE 100
+#define K_HEAL_DAMAGE 0
+#define K_HEAL_MOVE_SPEED 0
+#define K_HEAL_TIME 5
+#define K_HEAL 150
+#define K_HEAL_SIZE 100
